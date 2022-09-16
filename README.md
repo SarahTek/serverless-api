@@ -26,7 +26,7 @@ Create a single resource REST API using a domain model of your choosing, constru
 
 
 
-## [PR](https://github.com/SarahTek/serverless-api/pull/3)
+## [PR](https://github.com/SarahTek/serverless-api/pull/5)
 ## UML
 
 ![UML](dynamo.png)
