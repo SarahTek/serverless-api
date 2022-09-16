@@ -10,27 +10,35 @@ const FriendsModel = dynamoose.model("Friends", friendSchema);
 
 exports.handler = async (event) => {
 
-  const id = event.pathParameters.id;
-  const friends = {
-    name: event.queryStringParameters.Name,
-  }
+  let updatePeople;
+
 
   try {
-    let updateFriend = await FriendsModel.update(id, friends);
+    let str = event.body.toString();
+    let json = JSON.parse(str);
 
+    let newFriend = {
+      body: json
+    };
+
+    updatePeople = await FriendsModel.update({
+      id: event.pathParameters.id.toString(),
+      Name: newFriend.body.name,
+      Phone: newFriend.body.Phone
+    });
     const response = {
       statusCode: 200,
-      body: JSON.stringify(updateFriend),
+      body: JSON.stringify(updatePeople),
 
-    }
-    return response
+    };
+    return response;
 
   } catch (error) {
     const response = {
 
       statusCode: 500,
       body: JSON.stringify(new Error('Could not read from the Friend table')),
-    }
+    };
     return response;
   }
 };
