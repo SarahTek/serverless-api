@@ -16,7 +16,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    let updateFriend = await FriendsModel.update(id, friends),
+    let updateFriend = await FriendsModel.update(id, friends);
 
     const response = {
       statusCode: 200,
