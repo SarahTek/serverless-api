@@ -25,11 +25,16 @@ Create a single resource REST API using a domain model of your choosing, constru
 - CRUD Operation Handlers: Lambda Functions
 
 
-## PR
 
+## [PR](https://github.com/SarahTek/serverless-api/pull/3)
 ## UML
 
-- 
+![UML](dynamo.png)
+
+### API Link
+- [deployement](https://s8v5zr44ke.execute-api.us-east-1.amazonaws.com/deploy/people)
+
+![Table](dynaTable.png)
 ### Documentaion
 
 What is the root URL to your API?
